@@ -44,7 +44,7 @@ The motivation for this package is to reduce the clutter in large files by omitt
 | `color`         | string | Color of the hidden message (if `color` package is loaded). | `blue`                     |
 
 
-# Optional Argument 
+## Optional Argument to Change "Proof." Header
 
 The `proof*` environment matches the behavior of the `proof` environment for using an optional argument to change the proof heading from "proof.":
 ```latex
@@ -52,6 +52,11 @@ The `proof*` environment matches the behavior of the `proof` environment for usi
 This labeled proof will be hidden unless visible.
 \end{proof*}
 ```
+
+## Change Log
+
+### v1.0 (2025/06/15)
+Initial version
 
 ## License
 The `hideproofs` package is licensed under the [LaTeX Project Public License](https://www.latex-project.org/lppl/).
