@@ -2,9 +2,9 @@
 % 
 % (c) 2025 - Paul Wintz
 %
-%% This program can be redistributed and/or modified under the terms
-%% of the LaTeX Project Public License Distributed from CTAN archives
-%% in directory macros/latex/base/lppl.txt.
+% This program can be redistributed and/or modified under the terms
+% of the LaTeX Project Public License Distributed from CTAN archives
+% in directory macros/latex/base/lppl.txt.
 % 
 % Disable LTeX for this file (https://valentjn.github.io/ltex/advanced-usage.html#magic-comments)
 % LTeX: enabled=false
@@ -93,23 +93,29 @@
     % Description: Override any automatic hiding or showing that is based on the document mode. 
     % Instead, always show the proofs.
     show .bool_set:N = {\l__hideproofs_force_show_bool},
+    show .value_forbidden:n = true,
     
     % ───── Define Boolean Key-Value Option: "hide" ─────
     % Description: Override any automatic hiding or showing that is based on the document mode. 
     % Instead, always hide the proofs.
     hide .bool_set:N = {\l__hideproofs_force_hide_bool},
+    hide .value_forbidden:n = true,
 
     % ───── Define String Key-Value Option: "message" ─────
     % Description: Set the message that is shown when a proof is hidden.
     message .str_set:N = {\hideproofs@message},
+    message .value_required:n = true,
     
     % ───── Define String Key-Value Option: "color" ─────
     % Description: Set the color of the message when a proof is hidden.
     color .str_set:N = {\hideproofs@color},
+    color .initial:n = {blue},
+    color .value_required:n = true,
 
     % ───── Define Boolean Key-Value Option: "hideInDefault" ─────
     % Description: Hide proofs if the document mode is default (neither draft nor final)
     hideInDefault .bool_set:N = {\l__hideproofs_hide_in_default_mode_bool},
+    hideInDefault .default:n = true, % If key is just used like \usepackage[hideInDefault]{hideproofs}, then treat it the same as \usepackage[hideInDefault=true]{hideproofs}.
     
     % % ───── Define Negated Boolean Key-Value Option: "showInDefault" ─────
     % % Description: Show proofs if the document mode is default (neither draft nor final)
@@ -118,6 +124,7 @@
     % ───── Define Boolean Key-Value Option: "hideInDraft" ─────
     % Description: Hide proofs if the document mode is draft
     hideInDraft .bool_set:N = {\l__hideproofs_hide_in_draft_mode_bool},
+    hideInDraft .default:n = true, % If key is just used like \usepackage[hideInDraft]{hideproofs}, then treat it the same as \usepackage[hideInDraft=true]{hideproofs}.
 
     % % ───── Define Negated Boolean Key-Value Option: "showInDraft" ─────
     % % Description: Show proofs if the document mode is draft
@@ -126,6 +133,7 @@
     % ───── Define Boolean Key-Value Option: "hideInFinal" ─────
     % Description: Hide proofs if the document mode is final
     hideInFinal .bool_set:N = {\l__hideproofs_hide_in_final_mode_bool},
+    hideInFinal .default:n = true, % If key is just used like \usepackage[hideInFinal]{hideproofs}, then treat it the same as \usepackage[hideInFinal=true]{hideproofs}.
 
     % % ───── Define Negated Boolean Key-Value Option: "showInFinal" ─────
     % % Description: Show proofs if the document mode is final

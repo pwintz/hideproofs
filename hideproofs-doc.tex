@@ -245,6 +245,27 @@ The result is \\[10pt]
   \end{minipage}
 }
 
+\makeatletter
+  \hideproofs@setDefaults{}
+  \hideproofs@newSetup{
+    message={Proof omitted.},
+    % color=red
+  }
+\makeatother
+\fbox{%
+  \begin{minipage}{0.8\linewidth}
+    \begin{proof}
+      This is a non-starred proof environment.
+    \end{proof}
+    \begin{proof*}
+      This is a starred proof environment.
+    \end{proof*}
+    \begin{proof*}[Proof sketch]
+      This is a starred proof environment with an optional argument.
+    \end{proof*}
+  \end{minipage}
+}
+
 % \subsection*{Example: Changing when proofs are hidden}
 
 
